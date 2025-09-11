@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/RedHatInsights/frontend-components/refs/heads/master/packages/config-utils/src/feo/spec/frontend-crd.schema.json
+---
+apiVersion: v1
+kind: Template
+metadata:
+  name: koku-standalone
+objects:
+  - apiVersion: cloud.redhat.com/v1alpha1
+    kind: Frontend
+    metadata:
+      name: 'koku-standalone'
+    spec:
+      feoConfigEnabled: true
+      bundleSegments:
+        - segmentId: 'koku-standalone'
+          bundleId: 'staging'
+          position: 110
+          navItems:
+            - id: 'koku-standalone.nav'
+              title: 'Koku Standalone'
+              expandable: false
+              routes:
+                - id: 'koku-standalone.home'
+                  title: 'Home'
+                  href: '/staging/cost-management/standalone'
+      API:
+        versions:
+          - v1
+      envName: ${ENV_NAME}
+      title: 'Koku Standalone App'
+      deploymentRepo: https://github.com/project-koku/koku-ui-mfe-on-prem
+      frontend:
+        paths:
+          - '/apps/koku-standalone'
+      image: ${IMAGE}:${IMAGE_TAG}
+      routes:
+        - pathname: '/staging/cost-management/standalone'
+parameters:
+  - name: ENV_NAME
+    required: true
+  - name: IMAGE_TAG
+    required: true
+  - name: IMAGE
+    value: quay.io/redhat-services-prod/cost-mgmt-dev-tenant/koku-standalone
+
+

@@ -1,10 +1,15 @@
-# Koku microfrontend (MFE) with Module Federation
+# Koku microfrontend (MFE) monorepo
 
-[![Apache 2.0][license-badge]](https://github.com/project-koku/koku-ui-mfe/blob/main/LICENSE)
-[![CI Status][build-badge]](https://github.com/project-koku/koku-ui-mfe/actions/workflows/ci.yml?query=branch%3Amain)
-[![codecov][codecov-badge]](https://codecov.io/gh/project-koku/koku-ui-mfe)
+[![Apache 2.0][license-badge]](https://github.com/project-koku/koku-ui-mfe-on-prem/blob/main/LICENSE)
+[![CI Status][build-badge]](https://github.com/project-koku/koku-ui-mfe-on-prem/actions/workflows/ci.yml?query=branch%3Amain)
+[![codecov][codecov-badge]](https://codecov.io/gh/project-koku/koku-ui-mfe-on-prem)
 
-React.js app for Cost Management.
+Monorepo containing:
+
+- apps/koku-mfe-cloud: React app for Cost Management MFE
+- libs/api: shared API client and query/helpers
+- libs/i18n: shared i18n runtime and messages data
+- libs/routes-components: shared UI components and route utilities
 
 User interface is based on [Patternfly].
 
@@ -41,11 +46,12 @@ sudo bash scripts/patch-etc-hosts.sh
 1. Install requirements listed above.
 2. Setup `/etc/hosts` entries listed above.
 3. Clone the repository, and open a terminal in the base of this project.
-4. Run the command `npm install` to install all the dependencies.
+4. Run `npm install` to install all workspace dependencies.
+5. Build libs: `npm run build:libs`
 
 ## Building
 ```
-npm build
+npm run build
 ```
 
 ## Testing
@@ -53,7 +59,7 @@ npm build
 npm test
 ```
 
-## Running Koku MFE against a hosted Koku API, using webpack proxy
+## Running the app against hosted API (webpack proxy)
 
 Note that this approach currently supports the Insights stage-beta, stage-stable, prod-beta, and prod-stable environments.
 
@@ -73,7 +79,7 @@ Follow the prompts that follow.
 https://stage.foo.redhat.com:1337/beta/staging/cost-management
 ```
 
-### Running Koku MFE with local Cloud Services Backend
+### Running with local Cloud Services Backend
 
 Refer to the [serving files locally][serving-files-locally] section of cloud services config for more details
 
@@ -87,7 +93,7 @@ make dev-static-node
 npm start:csb
 ```
 
-### Running Koku MFE with local Koku UI
+### Running with local Koku UI
 
 Refer to the [koku-ui README][koku-ui-readme] for more details
 
@@ -120,18 +126,39 @@ npm start:static
 npm start:csb:mfe
 ```
 
-## Releasing Koku MFE
+## Scripts
+
+Scripts are preserved by name; behavior is updated for the monorepo:
+
+- build: runs build:libs then builds `apps/koku-mfe-cloud`
+- build:prod: same as build
+- check:dependencies: check outdated dependencies
+- check:dependencies:update: update dependencies
+- check:messages: run unused i18n messages check across workspace
+- clean: remove dist caches in workspace
+- codemods: PatternFly codemods over app source
+- deploy: build, lint, test
+- install:pkgs / install:pkgs:force: install workspace deps
+- lint / lint:ts / lint:ts:fix: lint workspace TypeScript code
+- patch:hosts: update /etc/hosts via fec
+- postinstall: ts-patch install and cleanup
+- release:prod: release script
+- start / start:*: run app dev server with environment options
+- stats: output build stats
+- test / test:clean / test:update: jest test workflows
+- translations:*: extract/compile/sync i18n files into libs/i18n
+- verify: build, lint, test
 
 This [RELEASE][release-doc] doc describes how to release Koku MFE to each staging environment.
 
-[build-badge]: https://github.com/project-koku/koku-ui-mfe/actions/workflows/ci.yml/badge.svg?branch=main
-[codecov-badge]: https://codecov.io/gh/project-koku/koku-ui-mfe/graph/badge.svg?token=1hjFIy1cRe
+[build-badge]: https://github.com/project-koku/koku-ui-mfe-on-prem/actions/workflows/ci.yml/badge.svg?branch=main
+[codecov-badge]: https://codecov.io/gh/project-koku/koku-ui-mfe-on-prem/graph/badge.svg
 [Jira]: https://issues.redhat.com/projects/COST/
 [koku-ui-readme]: https://github.com/project-koku/koku-ui#readme
-[license-badge]: https://img.shields.io/github/license/project-koku/koku-ui-mfe.svg?longCache=true
+[license-badge]: https://img.shields.io/github/license/project-koku/koku-ui-mfe-on-prem.svg?longCache=true
 [nodejs]: https://nodejs.org/en/
 [npm]: https://www.npmjs.com/
 [patch-etc-hosts]: https://github.com/RedHatInsights/insights-proxy/blob/master/scripts/patch-etc-hosts.sh
 [Patternfly]: https://www.patternfly.org/
-[release-doc]: https://github.com/project-koku/koku-ui-mfe/blob/main/RELEASE.md
+[release-doc]: https://github.com/project-koku/koku-ui-mfe-on-prem/blob/main/RELEASE.md
 [serving-files-locally]: https://github.com/RedHatInsights/chrome-service-backend/blob/main/docs/cloud-services-config.md#serving-files-locally

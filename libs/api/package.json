@@ -1,0 +1,21 @@
+{
+  "name": "@koku/api",
+  "version": "0.0.1",
+  "private": false,
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "tsc --noEmit && rimraf dist",
+    "build": "tsc --build"
+  }
+}
+

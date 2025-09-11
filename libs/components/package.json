@@ -1,0 +1,26 @@
+{
+  "name": "@koku/components",
+  "version": "0.0.1",
+  "private": false,
+  "exports": {
+    "./components": {
+      "source": "./src/components/index.ts",
+      "types": "./dist/components/index.d.ts",
+      "default": "./dist/components/index.js"
+    },
+    "./utils": {
+      "source": "./src/utils/index.ts",
+      "types": "./dist/utils/index.d.ts",
+      "default": "./dist/utils/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "prebuild": "tsc --noEmit && rimraf dist",
+    "build": "tsc --build"
+  }
+}
+

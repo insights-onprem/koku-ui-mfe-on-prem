@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../..",
+    "moduleResolution": "Bundler",
+    "outDir": "../../dist/apps/koku-mfe-cloud"
+  },
+  "include": ["./src/**/*.ts*"],
+  "exclude": ["**/*.test.ts*"]
+}
+

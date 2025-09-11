@@ -2,23 +2,77 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "noUnusedLocals": true,
     "outDir": "./dist/",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "target": "esnext",
+    "paths": {
+      "api/*": [
+        "libs/api/src/api/*"
+      ],
+      "components/i18n": [
+        "libs/i18n/src/i18n"
+      ],
+      "routes/components/*": [
+        "libs/components/src/components/*"
+      ],
+      "routes/utils/*": [
+        "libs/components/src/utils/*"
+      ],
+      "@koku/api/*": [
+        "libs/api/src/api/*"
+      ],
+      "@koku/i18n": [
+        "libs/i18n/src/i18n"
+      ],
+      "@koku/i18n/messages": [
+        "libs/i18n/src/messages.ts"
+      ],
+      "@koku/components/*": [
+        "libs/components/src/*"
+      ],
+      "locales/messages": [
+        "libs/i18n/src/messages.ts"
+      ],
+      "locales/data.json": [
+        "libs/i18n/src/data.json"
+      ],
+      "store/*": [
+        "apps/koku-mfe-cloud/src/store/*"
+      ],
+      "routes/*": [
+        "apps/koku-mfe-cloud/src/routes/*"
+      ],
+      "routes": [
+        "apps/koku-mfe-cloud/src/routes/index.ts"
+      ],
+      "utils/*": [
+        "apps/koku-mfe-cloud/src/utils/*"
+      ],
+      "styles/*": [
+        "apps/koku-mfe-cloud/src/styles/*"
+      ],
+      "components/*": [
+        "apps/koku-mfe-cloud/src/components/*"
+      ]
+    }
   },
   "include": [
-    "./src/**/*.ts*",
+    "apps/**/*.ts*",
+    "libs/**/*.ts*",
+    "test/**/*.ts*"
   ],
   "exclude": [
-    "./src/**/*.test.ts*",
+    "**/*.test.ts*",
+    "node_modules",
+    "dist"
   ]
 }

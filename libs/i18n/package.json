@@ -1,0 +1,22 @@
+{
+  "name": "@koku/i18n",
+  "version": "0.0.1",
+  "private": false,
+  "exports": {
+    ".": {
+      "source": "./src/i18n/index.ts",
+      "types": "./dist/i18n/index.d.ts",
+      "default": "./dist/i18n/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "locales"
+  ],
+  "scripts": {
+    "prebuild": "tsc --noEmit && rimraf dist",
+    "build": "tsc --build"
+  }
+}
+
