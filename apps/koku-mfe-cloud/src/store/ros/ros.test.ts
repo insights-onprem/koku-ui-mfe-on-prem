@@ -33,8 +33,9 @@ const rosQueryString = 'rosQueryString';
 runRosMock.mockResolvedValue({ data: mockRos });
 global.Date.now = jest.fn(() => 12345);
 
-jest.spyOn(actions, 'fetchRosReport');
-jest.spyOn(selectors, 'selectRosFetchStatus');
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 test('default state', () => {
   const store = createRossStore();
@@ -48,7 +49,11 @@ test('fetch ros success', async () => {
   expect(selectors.selectRosFetchStatus(store.getState(), rosPathsType, rosType, rosQueryString)).toBe(
     FetchStatus.inProgress
   );
-  await waitFor(() => expect(selectors.selectRosFetchStatus).toHaveBeenCalled());
+  await waitFor(() =>
+    expect(selectors.selectRosFetchStatus(store.getState(), rosPathsType, rosType, rosQueryString)).toBe(
+      FetchStatus.complete
+    )
+  );
   const finishedState = store.getState();
   expect(selectors.selectRosFetchStatus(finishedState, rosPathsType, rosType, rosQueryString)).toBe(
     FetchStatus.complete
@@ -65,7 +70,11 @@ test('fetch ros failure', async () => {
   expect(selectors.selectRosFetchStatus(store.getState(), rosPathsType, rosType, rosQueryString)).toBe(
     FetchStatus.inProgress
   );
-  await waitFor(() => expect(selectors.selectRosFetchStatus).toHaveBeenCalled());
+  await waitFor(() =>
+    expect(selectors.selectRosFetchStatus(store.getState(), rosPathsType, rosType, rosQueryString)).toBe(
+      FetchStatus.complete
+    )
+  );
   const finishedState = store.getState();
   expect(selectors.selectRosFetchStatus(finishedState, rosPathsType, rosType, rosQueryString)).toBe(
     FetchStatus.complete
@@ -84,7 +93,11 @@ test('does not fetch ros if the request is in progress', () => {
 test('ros is not refetched if it has not expired', async () => {
   const store = createRossStore();
   store.dispatch(actions.fetchRosReport(rosPathsType, rosType, rosQueryString));
-  await waitFor(() => expect(actions.fetchRosReport).toHaveBeenCalled());
+  await waitFor(() =>
+    expect(selectors.selectRosFetchStatus(store.getState(), rosPathsType, rosType, rosQueryString)).toBe(
+      FetchStatus.complete
+    )
+  );
   store.dispatch(actions.fetchRosReport(rosPathsType, rosType, rosQueryString));
   expect(runRosReport).toHaveBeenCalledTimes(1);
 });

@@ -7,6 +7,7 @@
   },
   "scripts": {
     "build": "fec build",
+    "test": "jest --no-cache",
     "start": "fec dev",
     "start:static": "fec static",
     "postinstall": "ts-patch install",
@@ -50,6 +51,8 @@
   "devDependencies": {
     "@redhat-cloud-services/frontend-components-config": "^6.6.11",
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.25",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/jest-dom": "^6.6.3",
     "copy-webpack-plugin": "^12.0.2",
     "css-minimizer-webpack-plugin": "^7.0.0",
     "history": "^5.3.0",
