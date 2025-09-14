@@ -5,7 +5,7 @@ import { ExclamationTriangleIcon } from '@patternfly/react-icons/dist/esm/icons/
 import type { Query } from 'api/queries/query';
 import type { RecommendationReport } from 'api/ros/recommendations';
 import messages from 'locales/messages';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { DataTable } from '@koku/components/components';
