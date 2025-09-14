@@ -48,6 +48,9 @@
       "store/*": [
         "apps/koku-mfe-cloud/src/store/*"
       ],
+      "store": [
+        "apps/koku-mfe-cloud/src/store/index.ts"
+      ],
       "routes/*": [
         "apps/koku-mfe-cloud/src/routes/*"
       ],

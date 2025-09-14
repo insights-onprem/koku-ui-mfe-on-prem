@@ -1,6 +1,6 @@
 import { PageSection } from '@patternfly/react-core';
 import React from 'react';
-import { routes } from 'routes';
+import { routes } from '../../../routes';
 import { OptimizationsSummary } from 'routes/optimizations/optimizationsSummary';
 import { formatPath } from 'utils/paths';
 

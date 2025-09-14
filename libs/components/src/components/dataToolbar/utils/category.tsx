@@ -7,11 +7,11 @@ import { intl } from '@koku/i18n';
 import messages from 'locales/messages';
 import { cloneDeep } from 'lodash';
 import React from 'react';
-import type { ToolbarChipGroupExt } from 'routes/components/dataToolbar/utils/common';
-import { ResourceTypeahead } from 'routes/components/resourceTypeahead';
-import type { SelectWrapperOption } from 'routes/components/selectWrapper';
-import { SelectWrapper } from 'routes/components/selectWrapper';
-import type { Filter } from 'routes/utils/filter';
+import type { ToolbarChipGroupExt } from '../utils/common';
+import { ResourceTypeahead } from '../../resourceTypeahead';
+import type { SelectWrapperOption } from '../../selectWrapper';
+import { SelectWrapper } from '../../selectWrapper';
+import type { Filter } from '../../../utils/filter';
 
 import type { Filters } from './common';
 import { cleanInput, getChips, getFilter, hasFilters } from './common';

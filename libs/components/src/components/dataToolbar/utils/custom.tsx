@@ -1,10 +1,10 @@
 import { ToolbarFilter } from '@patternfly/react-core';
 import { cloneDeep } from 'lodash';
 import React from 'react';
-import { CustomSelect } from 'routes/components/dataToolbar/customSelect';
-import type { ToolbarChipGroupExt } from 'routes/components/dataToolbar/utils/common';
-import type { SelectWrapperOption } from 'routes/components/selectWrapper';
-import type { Filter } from 'routes/utils/filter';
+import { CustomSelect } from '../customSelect';
+import type { ToolbarChipGroupExt } from './common';
+import type { SelectWrapperOption } from '../../selectWrapper';
+import type { Filter } from '../../../utils/filter';
 
 import type { Filters } from './common';
 import { getChips, getFilter, hasFilters } from './common';

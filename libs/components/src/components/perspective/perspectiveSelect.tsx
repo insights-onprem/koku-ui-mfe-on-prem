@@ -6,7 +6,7 @@ import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
 import type { SelectWrapperOption } from 'routes/components/selectWrapper';
-import { SelectWrapper } from 'routes/components/selectWrapper';
+import { SelectWrapper } from '../selectWrapper';
 
 import { styles } from './perspective.styles';
 

@@ -1,4 +1,4 @@
-import 'routes/components/charts/common/chart.scss';
+import '@koku/components/components/charts/common/chart.scss';
 
 import {
   Chart,
@@ -14,8 +14,8 @@ import {
 import messages from 'locales/messages';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useIntl } from 'react-intl';
-import { getDateRangeString } from 'routes/components/charts/common';
-import type { ChartSeries } from 'routes/components/charts/common/chartUtils';
+import { getDateRangeString } from '@koku/components/components/charts/common';
+import type { ChartSeries } from '@koku/components/components/charts/common/chartUtils';
 import {
   getDomain,
   getLegendData,
@@ -23,8 +23,8 @@ import {
   initHiddenSeries,
   isDataAvailable,
   isSeriesHidden,
-} from 'routes/components/charts/common/chartUtils';
-import ChartTheme from 'routes/components/charts/theme';
+} from '@koku/components/components/charts/common/chartUtils';
+import ChartTheme from '@koku/components/components/charts/theme';
 import { unitsLookupKey } from 'utils/format';
 
 import { chartStyles } from './optimizationsBreakdownChart.styles';

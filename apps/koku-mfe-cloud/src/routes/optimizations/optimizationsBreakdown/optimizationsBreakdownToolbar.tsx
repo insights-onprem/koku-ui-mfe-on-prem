@@ -2,7 +2,7 @@ import type { Query } from 'api/queries/query';
 import type { Recommendations } from 'api/ros/recommendations';
 import messages from 'locales/messages';
 import React from 'react';
-import { PerspectiveSelect } from 'routes/components/perspective/perspectiveSelect';
+import { PerspectiveSelect } from '@koku/components/components/perspective/perspectiveSelect';
 import type { OptimizationType } from 'utils/commonTypes';
 import { Interval } from 'utils/commonTypes';
 import { hasNotifications } from 'utils/notifications';

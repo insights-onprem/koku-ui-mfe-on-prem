@@ -46,7 +46,7 @@ const OptimizationsTable: React.FC<OptimizationsTableProps> = ({
   const getEmptyState = () => {
     return (
       <div style={styles.emptyState}>
-        <NotAvailable title={intl.formatMessage(messages.tableEmptyState)} />
+        <NotAvailable title={intl.formatMessage(messages.detailsEmptyState)} />
       </div>
     );
   };

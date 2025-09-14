@@ -1,7 +1,7 @@
 import type { Report, ReportData, ReportItem, ReportItemValue, ReportValue } from 'api/reports/report';
 import { intl } from '@koku/i18n';
 import messages from 'locales/messages';
-import { sort, SortDirection } from 'routes/utils/sort';
+import { sort, SortDirection } from '../sort';
 
 import { getItemLabel } from './getItemLabel';
 

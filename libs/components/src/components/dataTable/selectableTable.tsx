@@ -7,7 +7,7 @@ import type { ReactNode } from 'react';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
-import { EmptyFilterState } from 'routes/components/state/emptyFilterState';
+import { EmptyFilterState } from '../state/emptyFilterState';
 import type { RouterComponentProps } from 'utils/router';
 import { withRouter } from 'utils/router';
 

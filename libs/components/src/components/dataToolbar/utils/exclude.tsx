@@ -3,8 +3,8 @@ import { FilterIcon } from '@patternfly/react-icons/dist/esm/icons/filter-icon';
 import { intl } from '@koku/i18n';
 import messages from 'locales/messages';
 import React from 'react';
-import type { SelectWrapperOption } from 'routes/components/selectWrapper';
-import { SelectWrapper } from 'routes/components/selectWrapper';
+import type { SelectWrapperOption } from '../../selectWrapper';
+import { SelectWrapper } from '../../selectWrapper';
 
 import type { Filters } from './common';
 import { hasFilters } from './common';

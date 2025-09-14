@@ -1,7 +1,7 @@
 import messages from 'locales/messages';
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { routes } from 'routes';
+import { routes } from '../../../routes';
 import { OptimizationsDetails } from 'routes/optimizations/optimizationsDetails';
 import { formatPath } from 'utils/paths';
 

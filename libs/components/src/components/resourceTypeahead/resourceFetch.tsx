@@ -9,8 +9,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { AnyAction } from 'redux';
 import type { ThunkDispatch } from 'redux-thunk';
-import { noop } from 'routes/utils/noop';
-import type { RootState } from 'store';
+import { noop } from '../../../utils/noop';
+// App RootState is provided by host app; use any to avoid cross-package import
+type RootState = any;
 import { FetchStatus } from 'store/common';
 import { resourceActions, resourceSelectors } from 'store/resources';
 

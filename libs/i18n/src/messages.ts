@@ -605,6 +605,11 @@ export default defineMessages({
     description: 'Suggestions',
     id: 'suggestions',
   },
+  typeaheadAriaClear: {
+    defaultMessage: 'Clear button and input',
+    description: 'Clear button and input',
+    id: 'typeaheadAriaClear',
+  },
   unitTooltips: {
     defaultMessage:
       '{units, select, ' +

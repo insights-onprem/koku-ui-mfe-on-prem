@@ -3,7 +3,7 @@ import IntlProvider from '@redhat-cloud-services/frontend-components-translation
 import { getLocale } from '@koku/i18n';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { mfeStore } from 'store';
+import { mfeStore } from '../store';
 
 // eslint-disable-next-line no-restricted-imports
 import messages from 'locales/data.json';

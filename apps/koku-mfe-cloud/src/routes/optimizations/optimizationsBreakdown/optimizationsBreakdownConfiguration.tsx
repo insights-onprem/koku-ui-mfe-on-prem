@@ -21,7 +21,7 @@ import type { RecommendationValues } from 'api/ros/recommendations';
 import messages from 'locales/messages';
 import React, { useState } from 'react';
 import { useIntl } from 'react-intl';
-import { OptimizedState } from 'routes/components/state/optimizedState';
+import { OptimizedState } from '@koku/components/components';
 import type { OptimizationType } from 'utils/commonTypes';
 import { ConfigType, Interval } from 'utils/commonTypes';
 import { formatOptimization, formatPercentage, unitsLookupKey } from 'utils/format';

@@ -4,10 +4,10 @@ import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
-import type { ToolbarChipGroupExt } from 'routes/components/dataToolbar/utils/common';
-import type { SelectWrapperOption } from 'routes/components/selectWrapper';
-import { SelectCheckboxWrapper } from 'routes/components/selectWrapper';
-import type { Filter } from 'routes/utils/filter';
+import type { ToolbarChipGroupExt } from './utils/common';
+import type { SelectWrapperOption } from '../selectWrapper';
+import { SelectCheckboxWrapper } from '../selectWrapper';
+import type { Filter } from '../../utils/filter';
 import type { RouterComponentProps } from 'utils/router';
 import { withRouter } from 'utils/router';
 

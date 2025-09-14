@@ -11,9 +11,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import type { AnyAction } from 'redux';
 import type { ThunkDispatch } from 'redux-thunk';
-import { getUnsortedComputedReportItems } from 'routes/utils/computedReport/getComputedReportItems';
-import { getBreakdownPath } from 'routes/utils/paths';
-import type { RootState } from 'store';
+import { getUnsortedComputedReportItems } from '@koku/components/utils/computedReport/getComputedReportItems';
+import { getBreakdownPath } from '@koku/components/utils/paths';
+import type { RootState } from '../../../store';
 import { FetchStatus } from 'store/common';
 import { reportActions, reportSelectors } from 'store/reports';
 

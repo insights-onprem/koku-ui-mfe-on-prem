@@ -9,9 +9,9 @@ import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
-import type { SelectWrapperOption } from 'routes/components/selectWrapper';
-import { isEqual } from 'routes/utils/equal';
-import type { Filter } from 'routes/utils/filter';
+import type { SelectWrapperOption } from '../selectWrapper';
+import { isEqual } from '../../utils/equal';
+import type { Filter } from '../../utils/filter';
 import { createMapStateToProps } from 'store/common';
 
 import {

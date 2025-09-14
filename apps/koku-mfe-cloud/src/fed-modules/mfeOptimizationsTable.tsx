@@ -28,16 +28,7 @@ const MfeOptimizationsDetails: React.FC<OptimizationsDetailsProps> = ({
 }: OptimizationsDetailsOwnProps) => {
   return (
     <MfeOptimizationsWrapper>
-      <OptimizationsTable
-        breadcrumbLabel={breadcrumbLabel}
-        breadcrumbPath={breadcrumbPath}
-        cluster={cluster}
-        hideCluster={hideCluster}
-        hideProject={hideProject}
-        linkPath={linkPath}
-        linkState={linkState}
-        project={project}
-      />
+      <OptimizationsTable />
     </MfeOptimizationsWrapper>
   );
 };

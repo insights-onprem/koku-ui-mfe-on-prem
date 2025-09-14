@@ -29,14 +29,7 @@ const OptimizationsDetails: React.FC<OptimizationsDetailsProps> = ({
       <PageSection>
         <Card>
           <CardBody>
-            <OptimizationsTable
-              breadcrumbLabel={breadcrumbLabel}
-              breadcrumbPath={breadcrumbPath}
-              isOptimizationsDetails
-              linkPath={linkPath}
-              linkState={linkState}
-              projectPath={projectPath}
-            />
+            <OptimizationsTable />
           </CardBody>
         </Card>
       </PageSection>

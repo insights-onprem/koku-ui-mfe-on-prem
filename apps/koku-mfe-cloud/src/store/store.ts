@@ -1,5 +1,5 @@
 import { configureStore as createStore } from '@reduxjs/toolkit';
-import { axiosInstance } from 'api';
+import { axiosInstance } from '@koku/api';
 
 import type { RootState } from './rootReducer';
 import { rootReducer } from './rootReducer';

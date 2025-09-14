@@ -1,6 +1,6 @@
 import messages from 'locales/messages';
 import React from 'react';
-import { PerspectiveSelect } from 'routes/components/perspective/perspectiveSelect';
+import { PerspectiveSelect } from './perspectiveSelect';
 
 // Infrastructure AWS options
 const infrastructureAwsOptions = [{ label: messages.perspectiveValues, value: 'aws' }];

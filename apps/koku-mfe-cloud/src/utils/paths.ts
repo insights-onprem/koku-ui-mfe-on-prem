@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { routes } from 'routes';
+import { routes } from '../routes';
 
 // Prefixes the given path with a basename
 //

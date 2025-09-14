@@ -3,7 +3,7 @@ import messages from 'locales/messages';
 import React from 'react';
 import type { WrappedComponentProps } from 'react-intl';
 import { injectIntl } from 'react-intl';
-import { routes } from 'routes';
+import { routes } from '../../../../../../apps/koku-mfe-cloud/src/routes';
 import { formatPath } from 'utils/paths';
 
 interface NotAuthorizedStateOwnProps {

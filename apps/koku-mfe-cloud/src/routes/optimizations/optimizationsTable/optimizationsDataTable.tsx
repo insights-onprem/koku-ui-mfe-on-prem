@@ -14,8 +14,8 @@ import { NoOptimizations } from '@koku/components/components';
 import type { ComputedReportItem } from 'routes/utils/computedReport/getComputedReportItems';
 import { formatPath } from 'utils/paths';
 
-import type { RouterComponentProps } from '../../../utils/router';
-import type { RecommendationsAction } from './recommendationsAction';
+type RouterComponentProps = any;
+type RecommendationsAction = any;
 
 interface OptimizationsDataTableOwnProps extends RouterComponentProps {
   action?: RecommendationsAction;
@@ -40,11 +40,11 @@ const OptimizationsDataTable: React.FC<OptimizationsDataTableProps> = ({
   query,
   report,
 }: OptimizationsDataTableOwnProps) => {
-  const [isStandaloneApp, setIsStandaloneApp] = useState(false);
+  // const [isStandaloneApp, setIsStandaloneApp] = useState(false);
   const intl = useIntl();
 
   useEffect(() => {
-    setIsStandaloneApp(isStandalone || false);
+    // setIsStandaloneApp(isStandalone || false);
   }, [isStandalone]);
 
   const emptyState = (
@@ -61,9 +61,10 @@ const OptimizationsDataTable: React.FC<OptimizationsDataTableProps> = ({
 
   const getRowCells = (item: ComputedReportItem) => {
     const isTitleWrapped = false;
-    const isWarning = item.status?.value === 'warning';
+    const isWarning = (item as any).status?.value === 'warning';
     const scoreIcon = isWarning ? <Icon status="warning"><ExclamationTriangleIcon /></Icon> : undefined;
-    const type = intl.formatMessage(messages[item.type.value]);
+    const typeKey = (item as any).type?.value || (item as any).type;
+    const type = intl.formatMessage((messages as any)[typeKey] || messages.optimizations);
 
     const [groupBy] = Object.keys(query?.group_by || { account: 'account' });
     const groupByVal = Array.isArray(query?.group_by?.[groupBy]) ? query.group_by[groupBy][0] : query?.group_by?.[groupBy];

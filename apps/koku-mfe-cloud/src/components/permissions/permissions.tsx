@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import React, { useEffect, useState } from 'react';
-import Cookies from 'universal-cookie';
+// import Cookies from 'universal-cookie';
 import { Loading, NotAuthorized, NotAvailable } from '@koku/components/components';
 
 import { RosSidenavProvider } from '../sidenav/rosSidenavProvider';
@@ -15,7 +15,7 @@ const Permissions: React.FC<PermissionsProps> = ({ children }: PermissionsProps)
   // const cookies = new Cookies();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState(false);
-  const [isAvailable, setIsAvailable] = useState(true);
+  const [isAvailable] = useState(true);
 
   useEffect(() => {
     const fetchIsAuthorized = async () => {

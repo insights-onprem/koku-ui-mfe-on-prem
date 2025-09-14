@@ -2,7 +2,7 @@ import { ClipboardCopy, EmptyState, EmptyStateBody, EmptyStateVariant } from '@p
 import messages from 'locales/messages';
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { OptimizationIcon } from 'routes/components/icons/optimizationIcon';
+import { OptimizationIcon } from '../../icons/optimizationIcon';
 
 interface NotConfiguredStateOwnProps {
   // TBD...
