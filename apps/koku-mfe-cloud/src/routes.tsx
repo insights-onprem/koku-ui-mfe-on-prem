@@ -1,7 +1,7 @@
 import { Bullseye, Spinner } from '@patternfly/react-core';
 import { userAccess } from 'components/userAccess';
 import React, { lazy, Suspense } from 'react';
-import { Route, Routes as RouterRoutes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 const NotFound = lazy(() => import(/* webpackChunkName: "notFound" */ '@koku/components/components/page/notFound'));
 const OptimizationsBadgeStaging = lazy(
@@ -67,14 +67,14 @@ const Routes = () => (
       </Bullseye>
     }
   >
-    <RouterRoutes>
+    <Switch>
       {Object.keys(routes).map(key => {
         const route = routes[key];
-        return <Route key={route.path} path={route.path} element={<route.element />} />;
+        return <Route key={route.path} path={route.path} component={route.element} />;
       })}
       {/* Finally, catch all unmatched routes */}
-      <Route path="*" element={<NotFound />} />
-    </RouterRoutes>
+      <Route component={NotFound} />
+    </Switch>
   </Suspense>
 );
 
